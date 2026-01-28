@@ -1,5 +1,5 @@
 import { menuArray } from './data.js';
-
+const paymentForm = document.getElementById('payment-form');
 let orderArr = [];
 
 document.addEventListener('click', function (e) {
@@ -7,6 +7,8 @@ document.addEventListener('click', function (e) {
     handleAddBtn(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     handleRemoveBtn(e.target.dataset.remove);
+  } else if (e.target.id === 'complete-btn') {
+    handleCompleteBtn();
   }
 });
 
@@ -25,9 +27,26 @@ function handleRemoveBtn(removeId) {
   const targetIndex = orderArr.findIndex(item => {
     return item.id === idAsNumber;
   });
-  orderArr.splice(targetIndex, 1);
+  if (targetIndex > 1) {
+    orderArr.splice(targetIndex, 1);
+  }
   render();
 }
+
+function handleCompleteBtn() {
+  document.getElementById('payment-modal').classList.remove('hidden');
+}
+
+paymentForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const formData = new FormData(paymentForm);
+  const formName = formData.get('fullName');
+  orderArr = [];
+  document.getElementById('payment-modal').classList.add('hidden');
+  document.getElementById('order-container').innerHTML = `
+    <p class="order-complete-msg">Thanks, ${formName}! Your order is on its way!</p>
+  `;
+});
 
 function getMenuHtml() {
   return menuArray

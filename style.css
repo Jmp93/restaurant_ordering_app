@@ -178,3 +178,13 @@ input {
   margin-top: 1rem;
 }
 
+.payment-modal.hidden {
+  display: none !important;
+}
+
+.order-complete-msg {
+  background-color: rgb(225, 255, 225);
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  color: rgb(40, 95, 40);
+}
