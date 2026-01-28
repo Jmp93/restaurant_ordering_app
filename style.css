@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #777;
+}
+
+.menu-content {
+  display: flex;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.emoji {
+  font-size: 5rem;
+}
+
+.menu-title {
+  font-size: 1.6rem;
+}
+
+.menu-ingredients {
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.menu-price {
+  font-size: 1.1rem;
+}
+
+.add-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  background-color: #fff;
+}
+
+/* ORDER CONTAINER */
+
+.order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.order-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+#order-items-list, .order-item-list {
+  width: 100%;
+  /* max-width: 5000px; */
+}
+
+
+.order-item {
+  display: flex;
+  justify-content: space-between; Pushes name/remove left, price right
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-item-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: auto;
+}
+
+.order-item-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #bbbbbb;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.order-item-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Total Section */
+.total-price-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #393939;
+  margin-top: 10px;
+  padding-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* The Big Green Button */
+.complete-btn {
+  width: 100%;
+  max-width: 500px;
+  background-color: #16db99;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-top: 40px;
+  cursor: pointer;
+}
