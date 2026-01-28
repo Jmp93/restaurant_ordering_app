@@ -1,6 +1,33 @@
 import { menuArray } from './data.js';
 
-let orderArr = [menuArray[0]];
+let orderArr = [];
+
+document.addEventListener('click', function (e) {
+  if (e.target.dataset.add) {
+    handleAddBtn(e.target.dataset.add);
+  } else if (e.target.dataset.remove) {
+    handleRemoveBtn(e.target.dataset.remove);
+  }
+});
+
+function handleAddBtn(addId) {
+  const idAsNumber = Number(addId);
+  const targetAddObj = menuArray.find(item => {
+    return item.id === idAsNumber;
+  });
+
+  orderArr.push(targetAddObj);
+  render();
+}
+
+function handleRemoveBtn(removeId) {
+  const idAsNumber = Number(removeId);
+  const targetIndex = orderArr.findIndex(item => {
+    return item.id === idAsNumber;
+  });
+  orderArr.splice(targetIndex, 1);
+  render();
+}
 
 function getMenuHtml() {
   return menuArray
@@ -44,7 +71,7 @@ function getOrderHtml() {
     </div>
     <div class="total-price-container">
       <p>Total price:</p>
-      <p class="total-price-amount" id="total-price">${totalPrice}</p>
+      <p class="total-price-amount" id="total-price">$${totalPrice}</p>
     </div>
 
     <button class="complete-btn" id="complete-btn">Complete order</button>
