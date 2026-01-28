@@ -27,7 +27,7 @@ function handleRemoveBtn(removeId) {
   const targetIndex = orderArr.findIndex(item => {
     return item.id === idAsNumber;
   });
-  if (targetIndex > 1) {
+  if (targetIndex > -1) {
     orderArr.splice(targetIndex, 1);
   }
   render();
